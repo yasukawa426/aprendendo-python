@@ -10,6 +10,12 @@ def collatz(numero):
         return numero
 
 print ("Digite um numero inteiro maior q 1")
-digite = int(input())
+digite = None
+while digite == None:    
+    try:
+        digite = int(input())
+    except ValueError:
+        print("Número não inteiro digitado. Digite novamente")
+
 while digite != 1:
     digite = collatz(digite)
