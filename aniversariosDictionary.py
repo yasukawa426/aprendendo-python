@@ -45,3 +45,26 @@ print("----------")
 
 for i,j in aniversarios.items():
     print("Key: " + i + " | Value: " + j)
+
+
+print ("")
+#se n tiver a key Carlao, ele imprimi o q ta dps da virgula
+print (aniversarios.get("Carlao", "Non exisate"))
+
+aniversarios.setdefault("Aniversario Padrao", "QQQQQQQQQQ")
+print(aniversarios["Aniversario Padrao"])
+aniversarios["Aniversario Padrao"] = "Sei la brother"
+print(aniversarios["Aniversario Padrao"])
+print ("-------------")
+
+message = 'It was a bright cold day in April, and the clocks were striking thirteen.'
+count = {}
+
+
+#contando quantas vezes cada char repete na string
+
+for character in message: 
+    count.setdefault(character, 0) 
+    count[character] = count[character] + 1 
+
+print(count)
