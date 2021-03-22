@@ -1,3 +1,5 @@
+import pprint
+
 aniversarios = {
 "Felipe": "12 Julho",
 "Henrique": "25 Janeiro",
@@ -43,6 +45,11 @@ print(aniversarios)
 
 print("----------")
 
+print("PPrintando o dictionary")
+pprint.pprint(aniversarios)
+
+print("----------")
+
 for i,j in aniversarios.items():
     print("Key: " + i + " | Value: " + j)
 
@@ -57,14 +64,7 @@ aniversarios["Aniversario Padrao"] = "Sei la brother"
 print(aniversarios["Aniversario Padrao"])
 print ("-------------")
 
-message = 'It was a bright cold day in April, and the clocks were striking thirteen.'
-count = {}
 
 
-#contando quantas vezes cada char repete na string
 
-for character in message: 
-    count.setdefault(character, 0) 
-    count[character] = count[character] + 1 
 
-print(count)
