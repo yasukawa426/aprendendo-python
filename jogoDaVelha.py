@@ -4,69 +4,69 @@ def printJogo  (matriz):
     for i in matriz:
         print(i)
 
-def checarGanhou(matriz):
+def checarGanhou(matriz, jogador):
     #x| |
     #x| |
     #x| |
-    if jogoVelha[0][0] == jogoVelha[1][0] and jogoVelha[1][0] == jogoVelha[2][0]:
-        printJogo(jogoVelha)
-        print(str(jogoVelha[0][0]) + " ganhou" )
+    if matriz[0][0] == matriz[1][0] and matriz[1][0] == matriz[2][0] and matriz[0][0] == jogador:
+        printJogo(matriz)
+        print(str(matriz[0][0]) + " ganhou" )
         return True
 
     #x| |
-    #x| |
-    #x| |
-    elif jogoVelha[0][0] == jogoVelha[1][0] and jogoVelha[1][0] == jogoVelha[2][0]:
-        printJogo(jogoVelha)
-        print(str(jogoVelha[0][0]) + " ganhou" )
+    # |x|
+    # | |x
+    elif matriz[0][0] == matriz[1][1] and matriz[1][1] == matriz[2][2] and matriz[0][0] == jogador:
+        printJogo(matriz)
+        print(str(matriz[0][0]) + " ganhou" )
         return True
 
-    #x| |
-    #x| |
-    #x| |
-    elif jogoVelha[0][0] == jogoVelha[1][0] and jogoVelha[1][0] == jogoVelha[2][0]:
-        printJogo(jogoVelha)
-        print(str(jogoVelha[0][0]) + " ganhou" )
+    #x|x|x
+    # | |
+    # | |
+    elif matriz[0][0] == matriz[0][1] and matriz[0][1] == matriz[0][2] and matriz[0][0] == jogador:
+        printJogo(matriz)
+        print(str(matriz[0][0]) + " ganhou" )
         return True
 
-    #x| |
-    #x| |
-    #x| |
-    elif jogoVelha[0][0] == jogoVelha[1][0] and jogoVelha[1][0] == jogoVelha[2][0]:
-        printJogo(jogoVelha)
-        print(str(jogoVelha[0][0]) + " ganhou" )
+    # |x| 
+    # |x| 
+    # |x| 
+    elif matriz[0][1] == matriz[1][1] and matriz[1][1] == matriz[2][1] and matriz[0][1] == jogador:
+        printJogo(matriz)
+        print(str(matriz[0][1]) + " ganhou" )
         return True
 
-    #x| |
-    #x| |
-    #x| |
-    elif jogoVelha[0][0] == jogoVelha[1][0] and jogoVelha[1][0] == jogoVelha[2][0]:
-        printJogo(jogoVelha)
-        print(str(jogoVelha[0][0]) + " ganhou" )
+    # | |x
+    # | |x
+    # | |x
+    elif matriz[0][2] == matriz[1][2] and matriz[1][2] == matriz[2][2] and matriz[0][2] == jogador:
+        printJogo(matriz)
+        print(str(matriz[0][2]) + " ganhou" )
         return True
 
-    #x| |
-    #x| |
-    #x| |
-    elif jogoVelha[0][0] == jogoVelha[1][0] and jogoVelha[1][0] == jogoVelha[2][0]:
-        printJogo(jogoVelha)
-        print(str(jogoVelha[0][0]) + " ganhou" )
+    # | |
+    #x|x|x
+    # | |
+    elif matriz[0][1] == matriz[1][1] and matriz[1][1] == matriz[1][2] and matriz[1][0] == jogador:
+        printJogo(matriz)
+        print(str(matriz[0][1]) + " ganhou" )
         return True
 
+    # | |x
+    # |x|
     #x| |
-    #x| |
-    #x| |
-    elif jogoVelha[0][0] == jogoVelha[1][0] and jogoVelha[1][0] == jogoVelha[2][0]:
-        printJogo(jogoVelha)
-        print(str(jogoVelha[0][0]) + " ganhou" )
+    elif matriz[0][2] == matriz[1][1] and matriz[2][0] == matriz[1][1] and matriz[2][0] == jogador:
+        printJogo(matriz)
+        print(str(matriz[0][2]) + " ganhou" )
         return True
 
-    #x| |
-    #x| |
-    #x| |
-    elif jogoVelha[0][0] == jogoVelha[1][0] and jogoVelha[1][0] == jogoVelha[2][0]:
-        printJogo(jogoVelha)
-        print(str(jogoVelha[0][0]) + " ganhou" )
+    # | |
+    # | |
+    #x|x|x
+    elif matriz[2][0] == matriz[2][1] and matriz[2][1] == matriz[2][2] and matriz[2][0] == jogador:
+        printJogo(matriz)
+        print(str(matriz[2][0]) + " ganhou" )
         return True
 
     
@@ -85,7 +85,7 @@ while True:
     xColuna = int(input("x, Qual coluna vc quer jogar? (apenas numero): ")
 )
     jogoVelha[xLinha-1][xColuna-1] = "x"
-    ganhou = checarGanhou(jogoVelha)
+    ganhou = checarGanhou(jogoVelha,"x")
     if ganhou:
         break
 
@@ -94,7 +94,7 @@ while True:
     yColuna = int(input("y, Qual coluna vc quer jogar? (apenas numero): "))
     
     jogoVelha[yLinha-1][yColuna-1] = "o"
-    ganhou = checarGanhou(jogoVelha)
+    ganhou = checarGanhou(jogoVelha,"o")
     if ganhou:
         break
 
