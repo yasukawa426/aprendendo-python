@@ -16,8 +16,13 @@ def mostrarInventario(invetario):
     print("Total de itens: " + str(itensTotais))
 
 def addParaIventario (inventario, itens):
-    
+
+    #para cada string dentro de itens
+    for i in itens:
+        #vou adicionar na chave i (variavel com o valor da string) + 1 item. Caso n exista essa chave, pego 0 e somo com 1
+        inventario[i] = inventario.get(i, 0) + 1
 
 
 
+addParaIventario(inventario,lootDragao)
 mostrarInventario(inventario)
