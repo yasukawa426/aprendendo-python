@@ -1,10 +1,8 @@
 inventario = {
- "Flecha" : 12,
- "Moeda de Ouro" : 42,
- "Corda" : 1,
- "Tocha" : 4,
- "Adaga" : 1
+ "moeda de ouro" : 42,
+ "corda" : 1,
 }
+lootDragao = ['moeda de ouro','adaga','moeda de ouro','moeda de ouro','ruby']
 
 def mostrarInventario(invetario):
     print("Inventario:")
@@ -13,7 +11,13 @@ def mostrarInventario(invetario):
     for chave,valor in inventario.items():
         #print("Chave: " + chave + " Valor: " + str(valor))
         itensTotais = itensTotais + valor
-        print(str(valor) + " " + chave.lower()) #.lower() coloca em letra minuscula
-        
+        print(str(valor) + " " + chave) #.lower() coloca em letra minuscula
+
     print("Total de itens: " + str(itensTotais))
+
+def addParaIventario (inventario, itens):
+    
+
+
+
 mostrarInventario(inventario)
