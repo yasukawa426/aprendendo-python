@@ -11,7 +11,10 @@ def mostrarInventario(invetario):
     for chave,valor in inventario.items():
         #print("Chave: " + chave + " Valor: " + str(valor))
         itensTotais = itensTotais + valor
+        #if valor > 1:
+        #    chave = chave + "s"
         print(str(valor) + " " + chave) #.lower() coloca em letra minuscula
+
 
     print("Total de itens: " + str(itensTotais))
 
