@@ -4,6 +4,14 @@ def printJogo  (matriz):
     for i in matriz:
         print(i)
 
+def deuVelha (matriz):
+    #percorre a matriz td checando se existe algum espaço vazio, se sim, retorna true
+    for i in matriz:
+        resposta = " " in i
+        if resposta == True:
+            return False
+    return True
+
 def checarGanhou(matriz, jogador):
     #x| |
     #x| |
@@ -68,6 +76,11 @@ def checarGanhou(matriz, jogador):
         printJogo(matriz)
         print(str(matriz[2][0]) + " ganhou" )
         return True
+    
+    else:
+        #se deu velhar, return velha
+        if deuVelha(matriz):
+            return "velha"
 
     
     return False
@@ -78,7 +91,7 @@ jogoVelha = [
 [" ", " ", " "],
 [" ", " ", " "],
 ]
-
+ganhou = False
 while True:
     printJogo(jogoVelha)
     xLinha = int(input("x, Qual linha vc quer jogar? (apenas numero): "))
@@ -86,18 +99,25 @@ while True:
 )
     jogoVelha[xLinha-1][xColuna-1] = "x"
     ganhou = checarGanhou(jogoVelha,"x")
-    if ganhou:
-        break
 
     printJogo(jogoVelha)
+    if ganhou == True:
+        break
+    elif ganhou == "velha":
+        print("Deu velha!")
+        break
     yLinha = int(input("y, Qual linha vc quer jogar? (apenas numero): "))
     yColuna = int(input("y, Qual coluna vc quer jogar? (apenas numero): "))
     
     jogoVelha[yLinha-1][yColuna-1] = "o"
+    printJogo(jogoVelha)
     ganhou = checarGanhou(jogoVelha,"o")
     if ganhou:
         break
+    elif ganhou == "velha":
+        print("Deu velha!")
+        break
 
-    print("--------")
+    print("-----------------------------")
     
     
