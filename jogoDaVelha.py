@@ -48,7 +48,7 @@ def checarGanhou(matriz, jogador):
     # | |
     #x|x|x
     # | |
-    elif matriz[0][1] == matriz[1][1] and matriz[1][1] == matriz[1][2] and matriz[1][0] == jogador:
+    elif matriz[1][0] == matriz[1][1] and matriz[1][1] == matriz[1][2] and matriz[1][0] == jogador:
         printJogo(matriz)
         print(str(matriz[0][1]) + " ganhou" )
         return True
