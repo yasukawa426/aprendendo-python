@@ -8,6 +8,8 @@ print(oi[8])
 print(oi[0:5])
 print(oi[6:])
 
+
+# -------------------------- join() e split() --------------------------
 nomes = ['Carlos', 'Michael', "gAy", "noses"]
 
 print (' '.join(nomes))
@@ -27,6 +29,19 @@ Please do not drink it.
 Sincerely, Bob'''
 
 print(spam.split('\n')) #separa a frase td vez q pula uma linha
+
+
+# -------------------------- formatação --------------------------
+print("Hello".rjust(20)) #quantos caracteres vai ter. Se for menor q a string, nada vai acontecer
+print("Hello".ljust(20)) 
+print("Hello".center(20)) 
+
+#caracteres especiais
+#substitui os espaços vazio pelo caractere q vc usar
+print("Hello".rjust(20, 'a')) 
+print("Hello".ljust(20, "*")) 
+print("Hello".center(20, "=")) 
+
 
 
 
