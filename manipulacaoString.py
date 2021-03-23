@@ -20,6 +20,16 @@ print(frase.split())
 print(frase.split("u"))
 print(frase.split(sep = "u"))#msm coisa
 
+spam = '''Dear Alice, How have you been? I am fine.
+There is a container in the fridge 
+that is labeled "Milk Experiment". 
+Please do not drink it. 
+Sincerely, Bob'''
+
+print(spam.split('\n')) #separa a frase td vez q pula uma linha
+
+
+
 # while True:
 #     idade = input("Digite sua idade: ")
 
